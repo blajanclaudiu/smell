@@ -1,0 +1,35 @@
+{
+  "name": "vue-email-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel --concurrency 25",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch"
+  },
+  "devDependencies": {
+    "@types/node": "18.18.0",
+    "eslint": "9.4.0",
+    "prettier": "3.3.2",
+    "tsup": "8.1.0",
+    "turbo": "2.0.3",
+    "vite": "5.2.13",
+    "vitest": "1.6.0",
+    "tsconfig": "workspace:*",
+    "happy-dom": "12.2.2",
+    "@vitejs/plugin-vue": "^5.0.5"
+  },
+  "packageManager": "pnpm@9.1.1",
+  "pnpm": {
+    "patchedDependencies": {
+      "postcss-css-variables@0.19.0": "patches/postcss-css-variables@0.19.0.patch",
+      "process@0.11.10": "patches/process@0.11.10.patch",
+      "tailwindcss@3.3.2": "patches/tailwindcss@3.3.2.patch"
+    }
+  }
+}
